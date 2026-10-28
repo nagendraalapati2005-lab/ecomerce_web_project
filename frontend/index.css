@@ -1,0 +1,11 @@
+.nav{
+    display: flex;
+    gap: 50px;
+    color: white;
+    margin-top: 20px;
+}
+.container{
+    display: flex;
+    gap: 750px;
+    background-color: black;
+}
