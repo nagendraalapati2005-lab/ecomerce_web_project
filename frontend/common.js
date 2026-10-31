@@ -31,9 +31,13 @@ function saveCart(cart) {
 function addToCart(item) {                     
   const cart = getCart();
   const existing = cart.find((i) => i.slug === item.slug);
-  if (existing) existing.quantity += 1;
+  if (existing) {
+    if (existing.quantity >= 20) return false;
+    existing.quantity += 1;
+  }
   else cart.push({ ...item, quantity: 1 });
   saveCart(cart);
+  return true;
 }
 function changeQuantity(slug, change) {        
   const cart = getCart();

@@ -1,8 +1,8 @@
-import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
+import dotenv from "dotenv";
 import rateLimit from "express-rate-limit";
 import { pool } from "./db.js";
 import { STORE_PHONE } from "./utils.js";
@@ -13,6 +13,7 @@ import chatRoutes from "./routes/chat.js";
 import adminRoutes from "./routes/admin.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: path.join(__dirname, ".env") });
 const PORT = process.env.PORT || 3001;
 const PAGES_DIR = process.env.PAGES_DIR || "frontend";
 
