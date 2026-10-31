@@ -1,5 +1,7 @@
 
 
+/* ===== Franki's Pizzeria - About page ===== */
+
 :root {
   --red: #c0392b;
   --red-dark: #8e1b12;
@@ -9,6 +11,7 @@
   --side-space: max(20px, calc((100% - 1100px) / 2));
 }
 
+/* ---------- Base ---------- */
 * {
   box-sizing: border-box;
 }
@@ -25,7 +28,8 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
-.container_header {
+/* ---------- Header + nav (black) ---------- */
+.navbar {
   background: #000;
   display: flex;
   justify-content: space-between;
@@ -33,28 +37,35 @@ h1, h2, h3, h4 {
   padding: 10px 40px;
 }
 
-.container_header header img {
+.logo,
+.logo img {
   display: block;
 }
 
-.nav {
+.nav-links {
   display: flex;
   gap: 40px;
   align-items: center;
 }
 
-.nav p {
-  margin: 0;
+.nav-links a {
   color: #fff;
   font-size: 18px;
-  cursor: pointer;
+  text-decoration: none;
   transition: color 0.2s;
 }
 
-.nav p:hover {
+.nav-links a:hover {
   color: #e8132b;
 }
 
+/* current page */
+.nav-links a.active {
+  color: var(--gold);
+  font-weight: bold;
+}
+
+/* ---------- Shared heading style for the three about sections ---------- */
 .our_story h2,
 .our_making h2,
 .our_team h2 {
@@ -78,6 +89,7 @@ h1, h2, h3, h4 {
   border-radius: 2px;
 }
 
+/* ---------- SECTION 1: Our story (cream glow, centered text) ---------- */
 .our_story {
   background: radial-gradient(circle at 70% 25%, #fff8e7 0%, #ffe0a8 100%);
   padding: 80px var(--side-space);
@@ -91,6 +103,7 @@ h1, h2, h3, h4 {
   line-height: 1.8;
 }
 
+/* ---------- SECTION 2: From our kitchen to your door (white, 4 cards) ---------- */
 .our_making {
   background: #fff;
   padding: 70px var(--side-space);
@@ -129,6 +142,7 @@ h1, h2, h3, h4 {
   line-height: 1.6;
 }
 
+/* ---------- SECTION 3: The people behind your pizza (tan, 3 cards) ---------- */
 .our_team {
   background: #f6dfb4;
   padding: 70px var(--side-space);
@@ -159,6 +173,7 @@ h1, h2, h3, h4 {
   line-height: 1.6;
 }
 
+/* ---------- SECTION 4: Hungry? call to action (red banner) ---------- */
 .action {
   background: linear-gradient(135deg, var(--red-dark), #e8132b);
   color: #fff;
@@ -200,6 +215,7 @@ h1, h2, h3, h4 {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
+/* ---------- SECTION 5: Footer (black, full width) ---------- */
 footer {
   background: var(--black);
   color: #ddd;
@@ -254,14 +270,15 @@ footer a:hover {
   color: #e8132b;
 }
 
+/* ---------- Small screens ---------- */
 @media (max-width: 800px) {
-  .container_header {
+  .navbar {
     flex-direction: column;
     gap: 10px;
     padding: 10px 16px;
   }
 
-  .nav {
+  .nav-links {
     gap: 20px;
   }
 
