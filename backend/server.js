@@ -14,7 +14,7 @@ import adminRoutes from "./routes/admin.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT || 3001;
-const PAGES_DIR = process.env.PAGES_DIR || "pages";
+const PAGES_DIR = process.env.PAGES_DIR || "frontend";
 
 const app = express();
 app.use(cors());                         
@@ -36,7 +36,7 @@ app.use("/api/admin", adminRoutes);
 app.use("/api", (req, res) => res.status(404).json({ error: "That API address does not exist." }));
 
 const siteRoot = path.join(__dirname, "..");
-for (const folder of ["assets", "frontend", PAGES_DIR]) {
+for (const folder of new Set(["assets", "frontend", PAGES_DIR])) {
   app.use("/" + folder, express.static(path.join(siteRoot, folder)));
 }
 app.get("/", (req, res) => res.redirect(`/${PAGES_DIR}/index.html`));
@@ -53,4 +53,3 @@ app.listen(PORT, () => {
     .then(() => console.log("Database connected"))
     .catch((err) => console.error("Database connection FAILED:", err.message));
 });
-

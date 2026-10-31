@@ -81,6 +81,7 @@ function readItemFromButton(button) {
 document.addEventListener("click", (event) => {
   const button = event.target.closest(".price p:last-child, .special_offer_price p:last-child, .add-to-cart");
   if (!button) return;
+  if (document.querySelector("#cart-count") && button.matches(".add-to-cart")) return;
   if (!button.dataset.label) button.dataset.label = button.textContent.trim();
   if (button.dataset.label.toLowerCase() !== "add to cart") return;
 
@@ -94,8 +95,8 @@ const PAGES = {
   home: "index.html",
   menu: "menu.html",
   about: "about.html",
-  contact: "customer-service.html",
-  "customer service": "customer-service.html",
+  contact: "customer-serviece.html",
+  "customer service": "customer-serviece.html",
   cart: "cart.html",
 };
 function updateCartCount() {
