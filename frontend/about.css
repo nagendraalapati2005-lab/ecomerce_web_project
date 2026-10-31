@@ -1,4 +1,4 @@
-/* ===== Franki's Pizzeria - About page ===== */
+
 
 :root {
   --red: #c0392b;
@@ -9,7 +9,6 @@
   --side-space: max(20px, calc((100% - 1100px) / 2));
 }
 
-/* ---------- Base ---------- */
 * {
   box-sizing: border-box;
 }
@@ -26,7 +25,6 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
-/* ---------- Header + nav (black) ---------- */
 .container_header {
   background: #000;
   display: flex;
@@ -57,7 +55,6 @@ h1, h2, h3, h4 {
   color: #e8132b;
 }
 
-/* ---------- Shared heading style for the three about sections ---------- */
 .our_story h2,
 .our_making h2,
 .our_team h2 {
@@ -81,7 +78,6 @@ h1, h2, h3, h4 {
   border-radius: 2px;
 }
 
-/* ---------- SECTION 1: Our story (cream glow, centered text) ---------- */
 .our_story {
   background: radial-gradient(circle at 70% 25%, #fff8e7 0%, #ffe0a8 100%);
   padding: 80px var(--side-space);
@@ -95,7 +91,6 @@ h1, h2, h3, h4 {
   line-height: 1.8;
 }
 
-/* ---------- SECTION 2: From our kitchen to your door (white, 4 cards) ---------- */
 .our_making {
   background: #fff;
   padding: 70px var(--side-space);
@@ -134,7 +129,6 @@ h1, h2, h3, h4 {
   line-height: 1.6;
 }
 
-/* ---------- SECTION 3: The people behind your pizza (tan, 3 cards) ---------- */
 .our_team {
   background: #f6dfb4;
   padding: 70px var(--side-space);
@@ -165,7 +159,6 @@ h1, h2, h3, h4 {
   line-height: 1.6;
 }
 
-/* ---------- SECTION 4: Hungry? call to action (red banner) ---------- */
 .action {
   background: linear-gradient(135deg, var(--red-dark), #e8132b);
   color: #fff;
@@ -207,7 +200,6 @@ h1, h2, h3, h4 {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
-/* ---------- SECTION 5: Footer (black, full width) ---------- */
 footer {
   background: var(--black);
   color: #ddd;
@@ -262,7 +254,6 @@ footer a:hover {
   color: #e8132b;
 }
 
-/* ---------- Small screens ---------- */
 @media (max-width: 800px) {
   .container_header {
     flex-direction: column;
