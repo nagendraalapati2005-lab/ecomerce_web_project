@@ -1,7 +1,7 @@
 const API_BASE =
   ["localhost", "127.0.0.1"].includes(location.hostname) && location.port !== "3001"
     ? "http://localhost:3001"
-    : "";
+    : "https://franki-backend-w4ai.onrender.com";
 async function api(path, options = {}) {
   const response = await fetch(API_BASE + path, {
     headers: { "Content-Type": "application/json" },
