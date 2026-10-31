@@ -303,6 +303,12 @@ img {
   color: var(--red);
 }
 
+.payment-note {
+  margin-top: 10px;
+  color: var(--soft-text);
+  line-height: 1.5;
+}
+
 .checkout-form label {
   display: block;
   font-weight: bold;
