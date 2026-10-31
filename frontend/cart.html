@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Order - Franki's Pizzeria</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../frontend/cart.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">Franki's Pizzeria</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About</a>
+      <a href="customer-service.html">Customer Service</a>
+      <a href="cart.html" class="btn btn-red btn-small">Cart (<span class="cart-count">0</span>)</a>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <div class="container">
+
+      <h1 class="page-title">Your order</h1>
+      <p class="page-intro">Check your pizzas, then tell us where to deliver.</p>
+
+      <div class="cart-layout">
+        <section class="cart-items">
+          <div id="cart-list" class="cart-list"></div>
+          <div id="empty-cart" class="empty-cart" hidden>
+            <h3>Your cart is empty</h3>
+            <p>Pick something tasty from the menu.</p>
+            <a href="menu.html" class="btn btn-red">Browse the menu</a>
+          </div>
+
+          <div id="cart-summary" hidden>
+            <div class="cart-total">
+              <span>Total</span>
+              <strong id="cart-total-amount">$0.00</strong>
+            </div>
+            <p class="cart-note">Delivery fee (if any): [DELIVERY FEE]</p>
+            <a href="menu.html" class="continue">&larr; Add more pizzas</a>
+          </div>
+        </section>
+
+        <form class="checkout-form" id="checkout-form">
+          <h2>Delivery details</h2>
+
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" required>
+
+          <label for="address">Address</label>
+          <input type="text" id="address" name="address" required>
+
+          <label for="notes">Delivery instructions (optional)</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Example: ring the bell twice"></textarea>
+
+          <button type="submit" class="btn btn-red">Place Order</button>
+          <p id="order-message" class="order-message" hidden></p>
+        </form>
+
+      </div>
+    </div>
+  </main>
+    <footer>
+    <div class="footer-container">
+
+      <div class="visit">
+        <h3>Visit us</h3>
+        <p>123 Main Street, Anytown, USA</p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Call us</h3>
+        <p>807-356-XXXX</p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Follow us</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul>
+      </div>
+
+      <div class="contact_us">
+        <h2>Contact us</h2>
+        <p>Have questions or feedback? We'd love to hear from you! Reach out to us through any of the following methods:</p>
+        <ul>
+          <li>Phone: 807-356-XXXX</li>
+          <li>Email: XXXXXXXXXX@gmail.com</li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <script src="js/cart.js"></script>
+  <script src="js/cart-page.js"></script>
+</body>
+</html>
