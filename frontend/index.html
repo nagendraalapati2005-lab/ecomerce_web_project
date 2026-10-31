@@ -4,22 +4,24 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Franki's Pizzeria</title>
-        <link rel="stylesheet" href="../frontend/index.css">
+        <link rel="stylesheet" href="./index.css">
+        <script src="./index.js" defer></script>
     </head>
     <body>
+        <a class="skip-link" href="#home">Skip to content</a>
         <div class="container_header">
         <header>
             <img src="../assets/images/Frankis-Logo.png" alt="Franki's Pizzeria" width="308" height="80">
         </header>
-            <div class="nav">
-        <P>Home</P>
-        <p>Menu</p>
-        <p>About</p>
-        <p>Contact</p>
-        <p>Cart</p>
-            </div>
+            <nav class="nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="cart-toggle" type="button" aria-controls="cart" aria-expanded="false">Cart (<span id="cart-count" aria-live="polite">0</span>)</button>
+            </nav>
         </div>
-        <div class="container1">
+        <div class="container1" id="home">
             <h2 class = "line_1"> BAKED FRESH . DELIVERED HOT</h2>
             <div class="two_image">
             <img src="../assets/images/fresh-is-better.png" alt="Fresh is Better" width="508" height="241">
@@ -32,53 +34,57 @@
             </div>
         </div>
 
-        <div class="menu_favorites"> 
+        <div class="menu_favorites" id="menu">
             <h4>customer favorites</h4>
             <div class="favorite1">
                 <img src="../assets/images/pepproni pizza.jpg" alt="Pepperoni Pizza">
-                <p>pepperoni special</p>
+                <h3>pepperoni special</h3>
                 <div class="favorite_description">
                 <p>Classic pepperoni, mozzarella and tomato sauce.</p>
                 </div>
                 <div class="price">
                 <p>$14.99</p>
-                <p>add to cart</p>
+                <button class="add-to-cart" type="button" data-id="pepperoni" data-name="Pepperoni Special" data-price="14.99">Add to cart</button>
                 </div>
             </div>
             <div class="favorite2">
                 <img src="../assets/images/marghareta.jpeg" alt="Margherita Pizza">
-                <p>Margherita</p>
+                <h3>Margherita</h3>
                 <div class="favorite_description">
                 <p>Fresh basil, mozzarella and a bright tomato base.</p>
                 </div>
                 <div class="price">
                 <p>$17.99</p>
-                <p>add to cart</p>
+                <button class="add-to-cart" type="button" data-id="margherita" data-name="Margherita" data-price="17.99">Add to cart</button>
                 </div>
             </div>
             <div class="favorite3">
                 <img src="../assets/images/images.jpg" alt="Veggie Pizza">
-                <p>Veggie</p>
+                <h3>Veggie</h3>
                 <div class="favorite_description">
                 <p>Fresh vegetables, mozzarella and tomato sauce.</p>
                 </div>
                 <div class="price">
                 <p>$19.99</p>
-                <p>add to cart</p>
+                <button class="add-to-cart" type="button" data-id="veggie" data-name="Veggie" data-price="19.99">Add to cart</button>
                 </div>
             </div>
+            <section class="cart-panel" id="cart" aria-labelledby="cart-heading" hidden>
+                <h2 id="cart-heading">Your cart</h2>
+                <p id="cart-empty">Your cart is empty.</p>
+                <ul id="cart-items" aria-live="polite"></ul>
+                <p>Subtotal: <strong id="cart-total">$0.00</strong></p>
+                <button id="clear-cart" type="button" disabled>Clear cart</button>
+            </section>
         </div>
-        <div class="about_us">
+        <div class="about_us" id="about">
             <h1>about us</h1>
             <p>Franki's Pizzeria is a family-owned business that has been serving delicious pizza for over 20 years. We use only the freshest ingredients and traditional recipes to create our mouth-watering pizzas. Our commitment to quality and customer satisfaction has made us a favorite in the community.</p>
             <p>why people love us?</p>
             <ul>
-                <li>Fresh ingredients</li>
-                <ul><p>Real cheese, fresh vegetables and our own tomato sauce.</p></ul>
-                <li>Baked fresh</li>
-                <ul><p>We bake our pizzas to order, ensuring they are always hot and fresh.</p></ul>
-                <li>Fast delivery</li>
-                <ul><p>We deliver your pizza hot and fresh, right to your door.</p></ul>
+                <li>Fresh ingredients — real cheese, fresh vegetables and our own tomato sauce.</li>
+                <li>Baked fresh — we bake our pizzas to order, ensuring they are always hot and fresh.</li>
+                <li>Fast delivery — we deliver your pizza hot and fresh, right to your door.</li>
             </ul>
         </div>
         <div class="special_offer">
@@ -91,33 +97,30 @@
             <img src="../assets/images/special offer.jpg" alt="Special Offer">
             </div>
             <p>price: $19.99</p>
-            <p>add to cart</p>
+            <button class="add-to-cart" type="button" data-id="veggie-large" data-name="Veggie Large (free drink included)" data-price="19.99">Add to cart</button>
         </div>
         </div>
-    <footer>
-        <div class="footer-container">
-            <div class = "visit us">
-                <h3>Visit us</h3>
-                <p>123 Main Street, Anytown, USA</p>
-            </div>
-            <div class="footer-column">
-                <h3>Contact us : 807-356-XXXX</h3>
-            </div>
-            <div class="footer-column">
-                <h3>Follow us</h3>
+        <footer id="contact">
+            <div class="footer-container">
+                <div class="visit-us">
+                    <h3>Visit us</h3>
+                    <p>123 Main Street, Anytown, USA</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact us : 807-356-XXXX</h3>
+                    <p>Have questions or feedback? We'd love to hear from you!</p>
+                    <p>Email: XXXXXXXXXX@gmail.com</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow us</h3>
                     <ul>
                         <li><a href="#">Facebook</a></li>
                         <li><a href="#">Instagram</a></li>
                         <li><a href="#">Twitter</a></li>
                     </ul>
-            <div class="contact_us">
-            <h1>contact us</h1>
-            <p>Have questions or feedback? We'd love to hear from you! Reach out to us through any of the following methods:</p>
-            <ul>
-                <li>Phone: 807-356-XXXX</li>
-                <li>Email: XXXXXXXXXX@gmail.com></li>
-            </ul>
-        </div>
-    </footer>
+                </div>
+            </div>
+        </footer>
+
     </body>
 </html>
