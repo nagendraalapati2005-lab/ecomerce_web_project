@@ -12,7 +12,7 @@ function show(element, text, kind) {
   element.hidden = false;
 }
 
-const ORDER_NUMBER = /^FR-[A-Z0-9]{8}$/;
+const ORDER_NUMBER = /^FR-[A-HJ-NP-Z2-9]{8}$/;
 function readOrderNumber(value) {
   const number = value.trim().toUpperCase();
   if (!number) throw new Error("Please enter your order number.");
