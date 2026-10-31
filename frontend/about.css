@@ -1,0 +1,288 @@
+
+
+/* ===== Franki's Pizzeria - About page ===== */
+
+:root {
+  --red: #c0392b;
+  --red-dark: #8e1b12;
+  --gold: #ffd166;
+  --cream: #fff8e7;
+  --black: #111;
+  --side-space: max(20px, calc((100% - 1100px) / 2));
+}
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #222;
+  background: var(--cream);
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+/* ---------- Header + nav (black) ---------- */
+.navbar {
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+}
+
+.logo,
+.logo img {
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #e8132b;
+}
+
+/* current page */
+.nav-links a.active {
+  color: var(--gold);
+  font-weight: bold;
+}
+
+/* ---------- Shared heading style for the three about sections ---------- */
+.our_story h2,
+.our_making h2,
+.our_team h2 {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 30px;
+  color: var(--black);
+}
+
+.our_story h2::after,
+.our_making h2::after,
+.our_team h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--red);
+  margin: 14px auto 10px;
+  border-radius: 2px;
+}
+
+/* ---------- SECTION 1: Our story (cream glow, centered text) ---------- */
+.our_story {
+  background: radial-gradient(circle at 70% 25%, #fff8e7 0%, #ffe0a8 100%);
+  padding: 80px var(--side-space);
+  text-align: center;
+}
+
+.our_story p {
+  max-width: 800px;
+  margin: 20px auto 0;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+/* ---------- SECTION 2: From our kitchen to your door (white, 4 cards) ---------- */
+.our_making {
+  background: #fff;
+  padding: 70px var(--side-space);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  border-top: 6px solid var(--red);
+}
+
+.making_item {
+  width: 240px;
+  background: var(--cream);
+  border-radius: 16px;
+  border-top: 5px solid var(--red);
+  padding: 26px 22px;
+  text-align: center;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.making_item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+}
+
+.making_item h3 {
+  font-size: 22px;
+  color: var(--red);
+  margin-bottom: 10px;
+}
+
+.making_item p {
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ---------- SECTION 3: The people behind your pizza (tan, 3 cards) ---------- */
+.our_team {
+  background: #f6dfb4;
+  padding: 70px var(--side-space);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.team_item {
+  width: 330px;
+  background: #fff;
+  border-left: 6px solid var(--red);
+  border-radius: 10px;
+  padding: 24px 26px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.team_item h3 {
+  font-size: 21px;
+  color: var(--red-dark);
+  margin-bottom: 8px;
+}
+
+.team_item p {
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ---------- SECTION 4: Hungry? call to action (red banner) ---------- */
+.action {
+  background: linear-gradient(135deg, var(--red-dark), #e8132b);
+  color: #fff;
+  text-align: center;
+  padding: 70px var(--side-space);
+}
+
+.action h2 {
+  color: var(--gold);
+  font-size: 38px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.action p {
+  font-size: 20px;
+  margin: 0 auto 28px;
+  max-width: 640px;
+  line-height: 1.6;
+}
+
+.action_button button {
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  border-radius: 30px;
+  padding: 14px 42px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.action_button button:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- SECTION 5: Footer (black, full width) ---------- */
+footer {
+  background: var(--black);
+  color: #ddd;
+  padding: 60px var(--side-space) 40px;
+  border-top: 6px solid var(--gold);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-container > div {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-container h3,
+.footer-container h1 {
+  color: var(--gold);
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+.footer-container p {
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer li {
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: #e8132b;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 16px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .action h2 {
+    font-size: 28px;
+  }
+}
